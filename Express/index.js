@@ -8,15 +8,10 @@ const morgan=require(`morgan`);
 
 const dishrouter = require('./dishrouter/dishrouter');
 app.use('/dishes',dishrouter);
-//app.use('/dishes/:dishid',dishrouter);
-
 const promotions = require('./promotions/promotions');
 app.use('/promotions',promotions);
-//app.use('/promotions/:promid', promotions);
-
 const leaders = require('./leaders/leaders');
 app.use('/leaders',leaders);
-
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 app.use((req,res, next)=>{
